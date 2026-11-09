@@ -1,19 +1,47 @@
 #include <stdio.h>
 
-int main() {       
-     int age; 
-    char name[50];
+int main()  {
+    int num1, num2, result;
+    char operator; 
 
-    printf("Enter your name: ");
-    scanf("%s", name);
+    printf("Enter first number: ");
+    scanf("%d", &num1);
 
-    printf("Enter your age: ");
-    scanf("%d", &age);
-    printf("\n--- Result ---\n");
-    printf("Hello %s, you are %d years old.\n", name, age);
-    printf("Welcome to the world of C programing!\n");
+    printf("Enter an operator (+, _, *, /): ");
+    scanf(" %c", &operator);
 
-    return 0;
+    printf("Enter secand number: ");
+    scanf("%d", &num2);
 
 
-}
+    if (operator == '+') {    
+        result = num1 + num2;
+        printf("\nresult: %d + %d = %d\n", num1, num2, result);
+
+    }
+    else if (operator == '-') {  
+        result = num1 - num2 ;
+        printf("\nresult: %d - %d = %d\n", num1, num2, result);
+           
+    }
+    else if (operator == '*') {  
+        result = num1 * num2 ;
+        printf("\nresult: %d * %d = %d\n", num1, num2, result);
+           
+    }
+    else if (operator == '/') {  
+        if (num2 != 0){
+        result = num1 / num2 ;
+        printf("\nresult: %d / %d = %d\n", num1, num2, result);
+           
+    } else {
+        printf("\nError: Cannot divide by zero!\n");
+    }
+    }
+      else {
+        printf("\nError: Invalid operator!\n");
+
+      }
+
+      return 0;
+    }
