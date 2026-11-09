@@ -1,62 +1,39 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()  {
-    int num1, num2, result;
-    char operator; 
-    char choice;
-
-
-
-
+#include <time.h>
+int main() {  
+    int secret_number;
+    int guess = 0;
+    int attempts = 0;
 
 
-    do  {
-        printf("\n=== New Calculation ===\n");
 
-    printf("Enter first number: ");
-    scanf("%d", &num1);
+    srand(time(0));
 
-    printf("Enter an operator (+, _, *, /): ");
-    scanf(" %c", &operator);
+    secret_number = rand() % 100 + 1;
 
-    printf("Enter secand number: ");
-    scanf("%d", &num2);
+    printf("=== Welcome to the Guessing Game! ===\n");
+    printf("I have chosen a number between 1 and 100.\n");
+    printf("Can you guess it?\n\n");
 
 
-    if (operator == '+') {    
-        result = num1 + num2;
-        printf("\nresult: %d + %d = %d\n", num1, num2, result);
+    while ( guess != secret_number) { 
+    printf("Enter your guess: ");
+    scanf("%d", &guess);
+    attempts++;
 
+    if (guess > secret_number) {
+        printf("Too high! Try again.\n");
     }
-    else if (operator == '-') {  
-        result = num1 - num2 ;
-        printf("\nresult: %d - %d = %d\n", num1, num2, result);
-           
+    else if (guess < secret_number) {
+        printf("Too low! Try again.\n");
     }
-    else if (operator == '*') {  
-        result = num1 * num2 ;
-        printf("\nresult: %d * %d = %d\n", num1, num2, result);
-           
+    else {
+        printf("\nCongratulations!You guessed it in %d attempts!\n" ,attempts);
     }
-    else if (operator == '/') {  
-        if (num2 != 0){
-        result = num1 / num2 ;
-        printf("\nresult: %d / %d = %d\n", num1, num2, result);
-           
-    } else {
-        printf("\nError: Cannot divide by zero!\n");
-    }
-    }
-      else {
-        printf("\nError: Invalid operator!\n");
+}
 
-      }
-     
-        printf("\nDo you want to do another calculation? (y/n): ");
-        scanf(" %c", &choice);
-
-    } while (choice == 'y' || choice == 'y');
-    
-    printf("\nGoodbye! Thanks for using the calculator.\n");
-        return 0;
-    }
+  return 0;
+      
+}
