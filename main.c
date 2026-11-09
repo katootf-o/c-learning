@@ -3,6 +3,15 @@
 int main()  {
     int num1, num2, result;
     char operator; 
+    char choice;
+
+
+
+
+
+
+    do  {
+        printf("\n=== New Calculation ===\n");
 
     printf("Enter first number: ");
     scanf("%d", &num1);
@@ -42,6 +51,12 @@ int main()  {
         printf("\nError: Invalid operator!\n");
 
       }
+     
+        printf("\nDo you want to do another calculation? (y/n): ");
+        scanf(" %c", &choice);
 
-      return 0;
+    } while (choice == 'y' || choice == 'y');
+    
+    printf("\nGoodbye! Thanks for using the calculator.\n");
+        return 0;
     }
