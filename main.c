@@ -1,7 +1,19 @@
 #include <stdio.h>
 
-int main() {                                                  
-    printf("Hello, World! This is my first C program.\n");
-    printf("My name is Mohamed.\n");
+int main() {       
+     int age; 
+    char name[50];
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("\n--- Result ---\n");
+    printf("Hello %s, you are %d years old.\n", name, age);
+    printf("Welcome to the world of C programing!\n");
+
     return 0;
+
+
 }
